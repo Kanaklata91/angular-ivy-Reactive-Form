@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="OnSubmit()">
+  <div formArrayName="cities">
+    <div *ngFor="let city of cities.controls; let i = index">
+      <input [formControlName]="i" type="text" />
+    </div>
+  </div>
+  <button>Submit Form</button>
+</form>
+<button (click)="addCity()">Add City</button>
+
+<button (click)="setPreset()">Set Preset</button>
